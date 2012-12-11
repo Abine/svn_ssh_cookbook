@@ -1,0 +1,70 @@
+{
+  "name": "svn_ssh",
+  "description": "Installs/Configures svn_ssh",
+  "long_description": "Description\n===========\nSimple LWRP for accessing SVN repositories from SSH. Does very little\n\nAttributes\n==========\n * [:svn_ssh][:repo_location] Where the repo is located\n * [:svn_ssh][:ssh_key] SSH Key\n * [:svn_ssh][:ssh_user] User to use during SSH call\nUsage\n=====\nRun the default cookbook to install the subversion client.\n\nCall the update resource to download the code.\n",
+  "maintainer": "Abine, Inc.",
+  "maintainer_email": "cloud@abine.com",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "rightscale": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+    "svn_ssh/repo_location": {
+      "display_name": "Repository Hostname",
+      "description": "Location of repository (FQDN with no protocol). Example: dev.tripjar.com",
+      "required": "required",
+      "recipes": [
+        "svn_ssh::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "svn_ssh/ssh_key": {
+      "display_name": "Repository SSH Key",
+      "description": "SSH Key that can be used to access the repository.",
+      "required": "required",
+      "recipes": [
+        "svn_ssh::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "svn_ssh/ssh_user": {
+      "display_name": "Repository SSH User",
+      "description": "Name of user to connect as during SSH connection.",
+      "required": "required",
+      "recipes": [
+        "svn_ssh::default"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    }
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "svn_ssh::default": "Set up provider for SVN+SSH"
+  },
+  "version": "0.0.1"
+}
